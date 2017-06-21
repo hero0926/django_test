@@ -14,8 +14,13 @@
 
         <div>
             <p>published: 19.06.2017, 12:14</p>
-            <h2><a href="">뭘적지</a></h2>
-            <p>글쎄요.......</p>
+            <h2><a href="">게시글 목록</a></h2>
+           {% for post in posts %}
+            <div>
+                <h3><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+            {% endfor %}
         </div>
     </body>
 </html>
