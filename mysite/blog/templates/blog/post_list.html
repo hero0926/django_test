@@ -1,26 +1,41 @@
+{% load staticfiles %}
+
+
 <html>
     <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+
+
         <title>급조 장고걸즈 블로그</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">깃허브 프로필</a></h1>
+        <div class="page-header">
+            <h1><a href="https://github.com/hero0926">Github profile</a></h1>
+        </div>
+
+        <div class="page-header-right">
+            <h2><a href="https://github.com/hero0926/resume">Check my Github resume NOW</a></h2>
         </div>
 
         <div>
-            <p>published: 21.06.2017, 11:34</p>
-            <h2><a href="">깃허브 레쥬메</a></h2>
-        </div>
+            <h2>DB TEST</h2>
 
-        <div>
-            <p>published: 19.06.2017, 12:14</p>
-            <h2><a href="">게시글 목록</a></h2>
-           {% for post in posts %}
-            <div>
-                <h3><a href="">{{ post.title }}</a></h1>
-                <p>{{ post.text|linebreaksbr }}</p>
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-8">
+
+                    {% for post in posts %}
+                        <div class="post">
+                        <h3>{{ post.title }}</a></h3>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
             </div>
-            {% endfor %}
-        </div>
     </body>
 </html>
